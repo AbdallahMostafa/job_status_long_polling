@@ -33,3 +33,11 @@ function updateJob(jobId, prg) {
     if (prg == 100) return
     this.setTimeout(() => updateJob(jobId, prg  + 10), 10000)
 }
+
+// client code
+// curl -X POST http://localhost:8080/submit   
+// OutPut => job:1681324409086
+// curl -s "http://localhost:8080/checkstatus?jobId=job:1681324409086"
+// or
+// curl http://localhost:8080/checkstatus?jobId=job:1681324409086
+// Output => JobStatus: Complete 100%
